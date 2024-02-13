@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credit_card_fraud_Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+
+</head>
+<body>
+    <section>
+           <div class="container">
+              <div class="row">
+                <div class="headername">
+                    <h2><i>Dengue_test_Prediction</i> </h2>
+                </div>
+                 <div class="col-lg-4 offset-lg-4">
+                    <div class="login-box">
+
+                    <div style="color:black;margin-top: -50px;" class="ml-container">
+                      <form action="{{ url_for('predict') }}" method="POST">
+                            <br>
+                            <br>
+                            <h3>Enter you AGE</h3>
+                            <input id="1" name="Age"  class="frm-ctrl" placeholder="age" required="required">
+                            <br>
+                            <h3>Enter your SEX</h3>
+                            <input id="2" name="Sex"  class="frm-ctrl" placeholder="sex" required="required">
+                            <br>
+                            <h3>Enter your Total_Days_with_symthoms</h3>
+                            <input id="3" name="Total_Days_with_symthoms"  class="frm-ctrl" placeholder="Total_Days_with_symthoms" required="required">
+                            <br>
+                            <h3>Enter your Current_Body_Temperature</h3>
+                            <input id="4" name="Current_Body_Temperature" class="frm-ctrl" placeholder="Current_Body_Temperature" required="required">
+                            <br>
+                            <h3>Enter your Severe_Headache</h3>
+                            <input id="5" name="Severe_Headache" class="frm-ctrl" placeholder="Severe_Headache" required="required">
+                            <br>
+                            <h3>Enter your Pain_Behind_the_Eyes.</h3>
+                            <input id="6" name="Pain_Behind_the_Eyes" class="frm-ctrl" placeholder="Pain_Behind_the_Eyes" required="required">
+                            <br>
+                            <h3>Enter your Joint_and_Muscle_Aches.</h3>
+                            <input id="7" name="Joint_and_Muscle_Aches" class="frm-ctrl" placeholder="Joint_and_Muscle_Aches" required="required">
+                            <br>
+                            <h3>Enter you Metallic_Taste_in_the_Mouth</h3>
+                            <input id="8" name="Metallic_Taste_in_the_Mouth"  class="frm-ctrl" placeholder="Metallic_Taste_in_the_Mouth" required="required">
+                            <br>
+                            <h3>Enter your Appetite_Loss</h3>
+                            <input id="9" name="Appetite_Loss"  class="frm-ctrl" placeholder="Appetite_Loss" required="required">
+                            <br>
+                            <h3>Enter your Abdominal_Pain</h3>
+                            <input id="10" name="Abdominal_Pain"  class="frm-ctrl" placeholder="Abdominal_Pain" required="required">
+                            <br>
+                            <h3>Enter your Nausea_Vomiting</h3>
+                            <input id="11" name="Nausea_Vomiting" class="frm-ctrl" placeholder="Nausea_Vomiting" required="required">
+                            <br>
+                            <h3>Enter your Diarrhoea</h3>
+                            <input id="12" name="Diarrhoea" class="frm-ctrl" placeholder="Diarrhoea" required="required">
+                            <br>
+                            <h3>Enter your Hemoglobin (g/dL).</h3>
+                            <input id="13" name="Hemoglobin (g/dL)" class="frm-ctrl" placeholder="Hemoglobin (g/dL)" required="required">
+                            <br>
+                            <h3>Enter your WBC(cmm).</h3>
+                            <input id="14" name="WBC(cmm)" class="frm-ctrl" placeholder="WBC(cmm)" required="required">
+                            <br>
+                            <h3>Enter you Hematocrit(HCT) %</h3>
+                            <input id="15" name="Hematocrit(HCT)%"  class="frm-ctrl" placeholder="Hematocrit(HCT) %" required="required">
+                            <br>
+                            <h3>Enter your MCV(fl)</h3>
+                            <input id="16" name="MCV(fl)"  class="frm-ctrl" placeholder="MCV(fl)" required="required">
+                            <br>
+                            <h3>Enter your MCH(pg)</h3>
+                            <input id="17" name="MCH(pg)"  class="frm-ctrl" placeholder="MCH(pg)" required="required">
+                            <br>
+                            <h3>Enter your MCHC(g/dL)</h3>
+                            <input id="18" name="MCHC(g/dL)" class="frm-ctrl" placeholder="MCHC(g/dL)" required="required">
+                            <br>
+                            <h3>Enter your RBC(million/cmm)</h3>
+                            <input id="19" name="RBC(million/cmm)" class="frm-ctrl" placeholder="RBC(million/cmm)" required="required">
+                            <br>
+                            <h3>Enter your Neutrophil (%).</h3>
+                            <input id="20" name="Neutrophil(%)" class="frm-ctrl" placeholder="Neutrophil (%)" required="required">
+                            <br>
+                            <h3>Enter your Lymphocyte (%).</h3>
+                            <input id="21" name="Lymphocyte(%)" class="frm-ctrl" placeholder="Lymphocyte (%)" required="required">
+                            <br>
+                            <h3>Enter your Monocyte (%)</h3>
+                            <input id="22" name="Monocyte(%)" class="frm-ctrl" placeholder="Monocyte (%)" required="required">
+                            <br>
+                            <h3>Enter your Eosinophil (%)</h3>
+                            <input id="23" name="Eosinophil(%)" class="frm-ctrl" placeholder="Eosinophil (%)" required="required">
+                            <br>
+                            <h3>Enter your Platelet (cmm).</h3>
+                            <input id="24" name="Platelet(cmm)" class="frm-ctrl" placeholder="Platelet (cmm)" required="required">
+                            <br>
+                            
+                            <button type="submit" style="margin-top: 9px;margin-left: 125px;" class="btn-login">Predict</button>
+                            <h4>{{ prediction_text }}</h4>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                       </form>
+                    </div>
+                    </div>
+                 </div> 
+              </div>
+
+           </div>
+    </section>
+</body>
+</html>
